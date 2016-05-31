@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Parallel Multi-Block ADMM with o(1/k) Convergence</title>
+</head>
+<body>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+    var pageTracker = _gat._getTracker("UA-3247448-6");
+    pageTracker._trackPageview();
+} catch(err) {}</script>
+<div id="layout-content">
+<div id="toptitle">
+<h1>Parallel Multi-Block ADMM with o(1/k) Convergence</h1>
+<div id="subtitle"><i>Wei Deng, Ming-Jun Lai, Zhimin Peng and Wotao Yin</i> </div>
+</div>
+<p>Submitted</p>
+<ul>
+<li><p><a href="http://arxiv.org/pdf/1312.3040.pdf">Technical report</a></p>
+</li>
+</ul>
+<h2>Overview</h2>
+<p>This paper introduces a parallel and distributed extension to the alternating direction method of multipliers (ADMM) for solving convex problem:</p>
+
+<div class="eqwl"><img class="eqwl" src="eqs/5010754789169076585-130.png" alt=" mbox{minimize}~sum_i f_i(x_i),quadmbox{subject to}~sum_i A_ix_i = c. " />
+<br /></div><p>The algorithm decomposes the original problem into <img class="eq" src="eqs/9984030031-130.png" alt="N" style="vertical-align: -0px" /> smaller subproblems and solves them in parallel at each iteration. This Jacobian-type algorithm is well suited for distributed computing and is particularly attractive for solving certain large-scale problems. However, it has been shown that the Jacobian ADMM is not necessarily convergent. 	</p>
+<p>This paper introduces a few novel results. Firstly, it shows that extending ADMM straightforwardly from the classic Gauss-Seidel setting to the Jacobian setting, from 2 blocks to <img class="eq" src="eqs/9984030031-130.png" alt="N" style="vertical-align: -0px" /> blocks, will preserve convergence if matrices <img class="eq" src="eqs/593367982111446782-130.png" alt="A_i" style="vertical-align: -4px" /> are mutually near-orthogonal and have full column-rank. Secondly, for general matrices <img class="eq" src="eqs/593367982111446782-130.png" alt="A_i" style="vertical-align: -4px" />, this paper proposes to add proximal terms of different kinds to the <img class="eq" src="eqs/9984030031-130.png" alt="N" style="vertical-align: -0px" /> subproblems so that the subproblems can be solved in flexible and efficient ways and the algorithm converges globally at a rate of <img class="eq" src="eqs/4669523645368941453-130.png" alt="o(1/k)" style="vertical-align: -5px" />. Thirdly, a simple technique is introduced to improve some existing convergence rates from <img class="eq" src="eqs/940375977430228307-130.png" alt="O(1/k)" style="vertical-align: -5px" /> to <img class="eq" src="eqs/4669523645368941453-130.png" alt="o(1/k)" style="vertical-align: -5px" />.</p>
+<p>In practice, some conditions in our convergence theorems are conservative. Therefore, we introduce a strategy for dynamically tuning the parameters in the algorithm, leading to substantial acceleration of the convergence in practice. Numerical results are presented to demonstrate the efficiency of the proposed method in comparison with several existing parallel algorithms.</p>
+<p>We implemented our algorithm on Amazon EC2, an on-demand public computing cloud, and report its performance on very large-scale basis pursuit problems with distributed data.</p>
+<h2>Codes and demos</h2>
+<h3>Matlab codes</h3>
+<ul>
+<li><p><a href="./papers/jacobi_ADMM/ExchangeProblem.zip">Exchange Problem</a></p>
+</li>
+<li><p><a href="./papers/jacobi_ADMM/L1_minimization.zip">Basis Pursuit</a></p>
+</li>
+</ul>
+<h3>C code</h3>
+<ul>
+<li><p><a href="http://www.math.ucla.edu/~wotaoyin/papers/GRock/cdes.html">Installation</a></p>
+</li>
+<li><p><a href="./papers/jacobi_ADMM/jacobiADMM.html">jacobiADMM.c, syntax-highlighted HTML</a></p>
+</li>
+<li><p><a href="./papers/jacobi_ADMM/jacobiADMM.zip">Download zip</a></p>
+</li>
+<li><p>Compile and Run</p>
+</li>
+</ul>
+<p>Makefile is included in the zip file. You may need to edit Makefile to ensure that the variable 
+GSLROOT is set correctly. To compile, type:</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>make</p>
+</div></div>
+<p>To run, type:</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>mpirun -np 4 ./jacobiADMM</p>
+</div></div>
+<h2>Citation</h2>
+<p><i>W. Deng, M.-J. Lai, Z. Peng, and W. Yin</i>, Parallel Multi-Block ADMM with o(1/k) Convergence, UCLA CAM 13-64, 2013.</p>
+<h2>Previous version</h2>
+<p>An early version of this paper has different authors and a different title:</p>
+<p><i>W. Deng, M.-J. Lai, and W. Yin</i>, On the o(1/k) Convergence and Parallelization of the Alternating Direction Method of Multipliers, UCLA CAM 13-64, 2013.</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-03-29, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+</div>
+</div>
+</div>
+</body>
+</html>

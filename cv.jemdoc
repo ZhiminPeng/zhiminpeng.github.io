@@ -1,0 +1,28 @@
+# jemdoc: menu{MENU}{cv.html}, notime, backlink
+== Biography
+
+== Education
+
+   - University of California, Los Angeles, Department of Mathematics\n
+     Ph.D. (2016) \n
+     Dissertation: Asynchronous Parallel Coordinate Update Methods for Large Scale Problems\n
+     Advisor: Wotao Yin
+
+   - Rice University, Computational & Applied Mathematics\n	
+     Master of Art (2013) \n    
+     Dissertation: Parallel and Distributed Sparse Optimization \n
+     Advisor: Wotao Yin
+     
+
+== Experience
+
+   - Twilio \n
+     Data Science Intern (Summer 2015)
+
+   - Rackspace \n
+     Data Science Intern (Summer 2014)
+   
+   - U.S. Army Research Lab, Machine Learning Group \n
+     Research Intern (Summer 2012)
+   
+    More information can be found in my ~[Zhimin_CV.pdf CV].

@@ -1,0 +1,24 @@
+# jemdoc: menu{MENU}{pic10a15s.html}, notime, backlink
+== Introduction to C\+\+ Programming
+
+
+== Discussions
+   - Time: Tue and Thu 2pm - 2:50pm
+   - Location: MS 5118
+
+== Office Hours
+   - Time: Thu 3pm - 5pm
+   - Location: PIC Lab (Bolter Hall)
+
+== Lecture Notes
+   - Lecture 1 \[[pic10a/PIC10_Lec1.pdf slides]\]\n
+   - Lecture 2 \[[pic10a/PIC10_Lec2.pdf slides]\] ~\[[pic10a/lec2.cpp code]\]\n
+   - Lecture 3 \[[pic10a/PIC10_Lec3.pdf slides]\] ~\[[pic10a/lec3.cpp code]\]\n
+   - Lecture 6 \[[pic10a/PIC10_Lec6.pdf slides]\] ~\[[pic10a/lec6.cpp code]\]\n
+   - Lecture 7 \[[pic10a/PIC10_Lec7.pdf slides]\] ~\[[pic10a/lec7_a.cpp code1]\] ~\[[pic10a/lec7_b.cpp code2]\]\n
+   - Lecture 8 \[[pic10a/PIC10_Lec8.pdf slides]\] ~\[[pic10a/lec8_a.cpp code1]\] ~\[[pic10a/lec8_b.cpp code2]\]\n
+   - Lecture 9 \[[pic10a/PIC10_Lec9.pdf slides]\] ~\[[pic10a/lec9.cpp code]\]\n
+   - Lecture 12 \[[pic10a/PIC10_Lec12.pdf slides]\] ~\[[pic10a/lec12_a.cpp code1]\] ~\[[pic10a/lec12_b.cpp code2]\]\n
+   - Lecture 14 \[[pic10a/PIC10_Lec14.pdf slides]\] ~\[[pic10a/Vector.cpp code]\] \n
+   - Lecture 15 \[[pic10a/PIC10_Lec15.pdf slides]\] ~\[[pic10a/rotate.cpp code]\] \n
+   - Lecture 17 \[[pic10a/word_count.cpp code]\] \n      
