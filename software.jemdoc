@@ -6,10 +6,11 @@
 
    - [http://www.math.ucla.edu/~wotaoyin/papers/GRock/ GRock: MPI code for solving l1 regularized regression problems]\n
 
-   - [ARock/index.html ARock: Asynchronous Coordunate Update Framework]\n
+   - [https://github.com/ZhiminPeng/ARock ARock: Asynchronous Coordunate Update Framework]\n
 
-   - [https://github.com/ZhiminPeng/Jacobi-ADMM Jacobi-ADMM: for solving multi-block convex optimization problems]
+   - [https://github.com/ZhiminPeng/Jacobi-ADMM Jacobi-ADMM: for solving multi-block convex optimization problems]\n
 
+   - [https://github.com/uclaopt/TMAC TMAC: A Toolbox of Modern Async-Parallel, Coordinate, Splitting, and Stochastic Methods]
 
 
 == Github

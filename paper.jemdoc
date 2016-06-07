@@ -1,11 +1,16 @@
 # jemdoc: menu{MENU}{paper.html}, backlink, notime, analytics{UA-3247448-7}
 == Publications
 
+[https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en Google scholar profile]
+
 == Large-scale Convex Optimization and Applications
+   - [http://www.math.ucla.edu/~wotaoyin/papers/tmac.html TMAC: A Toolbox of Modern Async-Parallel, Coordinate, Splitting, and Stochastic Methods]\n
+     B. Edmunds, Z. Peng, and W. Yin\n
+     UCLA CAM Report 16-38, 2016
 
    - [http://arxiv.org/abs/1601.00863 Coordinate Friendly Structures, Algorithms and Applications]\n
      Z. Peng, T. Wu, Y. Xu, M. Yan, W. Yin\n
-     Submitted, Jan 2016
+     Annals of Mathematical Sciences and Applications, 1(1), pp. 57–119, 2016
 
    - [ARock/index.html ARock: an Algorithmic Framework for Asynchronous Parallel Coordinate Updates]\n
      Z. Peng, Y. Xu, M. Yan, W. Yin\n
