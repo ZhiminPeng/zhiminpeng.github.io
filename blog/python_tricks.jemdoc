@@ -23,6 +23,13 @@ msg = "%s is %d years old" % (name, age)
 for key in d:
     print key
 ~~~
+in is generally faster, and this pattern works for items in arbitrary containers.
+
+~~~
+{Use .keys() when mutating the dictionary}{python}
+for key in d.keys():
+    d[str(key)] = d[key]
+~~~
 
 ~~~
 {Word count}{python}
@@ -37,6 +44,12 @@ for key in d:
 for (key, val) in d.iteritems():
     print key, val
 ~~~
+
+~~~
+{building dictionary from two lists}{python}
+d = dict(zip(l1, l2))
+~~~
+
 
 == List
 
@@ -57,6 +70,17 @@ These functions make code much shorter and much faster, since the loop takes pla
 l = ['a', 'b', 'c']
 for (i, val) in enumerate(l):
     print i, val # i will be zero-based integer index for each element in l.
+~~~
+enumerate function actually returns an iterator
+
+
+~~~
+{List comprehension vs generator expressions}{python}
+# use a list comprehension when a computed list is the desired end result
+l = [num * num for num in range(1, 101)]
+# use a generator expression when the computed list is just an intermediate step
+total = sum(num * num
+            for num in xrange(1, 1000000000))
 ~~~
 
 
@@ -109,10 +133,17 @@ new_l = sorted(l)
 l.sort()
 ~~~
 
+~~~
+{sort with keys}{python}
+# sort list based on the second column first, then fourth column
+def my_key(item):
+    return (item[1], item[3])
+to_sort.sort(key=my_key)
+~~~
 
 
 
 
 == References
-[http://www.python.net/~goodger/projects/pycon/2007/idiomatic/handout.html Code Like a Pythonista: Idiomatic Python]\n
-[http://www.pgbovine.net/python-idioms.htm Python programming idioms by Philip Guo]
+- [http://www.python.net/~goodger/projects/pycon/2007/idiomatic/handout.html Code Like a Pythonista: Idiomatic Python]\n
+- [http://www.pgbovine.net/python-idioms.htm Python programming idioms by Philip Guo]

@@ -42,6 +42,13 @@ msg = <span class="string">"%s <span class="builtin">is</span> %d years old"</sp
 <span class="statement">for</span> key <span class="builtin">in</span> d:
     <span class="statement">print</span> key
 </pre></div></div>
+<p>in is generally faster, and this pattern works for items in arbitrary containers.</p>
+<div class="codeblock">
+<div class="blocktitle">Use .keys() when mutating the dictionary</div>
+<div class="blockcontent"><pre>
+<span class="statement">for</span> key <span class="builtin">in</span> d.keys():
+    d[<span class="builtin">str</span>(key)] = d[key]
+</pre></div></div>
 <div class="codeblock">
 <div class="blocktitle">Word count</div>
 <div class="blockcontent"><pre>
@@ -55,6 +62,11 @@ counts = defaultdict(int) <span class="comment"># default <span class="special">
 <div class="blockcontent"><pre>
 <span class="statement">for</span> (key, val) <span class="builtin">in</span> d.iteritems():
     <span class="statement">print</span> key, val
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">building dictionary from two lists</div>
+<div class="blockcontent"><pre>
+d = dict(<span class="builtin">zip</span>(l1, l2))
 </pre></div></div>
 <h2>List</h2>
 <div class="codeblock">
@@ -75,6 +87,16 @@ strings = map(<span class="builtin">str</span>, data)
 l = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]
 <span class="statement">for</span> (i, val) <span class="builtin">in</span> <span class="builtin">enumerate</span>(l):
     <span class="statement">print</span> i, val <span class="comment"># i will be zero-based integer index <span class="statement">for</span> each element <span class="builtin">in</span> l.</span>
+</pre></div></div>
+<p>enumerate function actually returns an iterator</p>
+<div class="codeblock">
+<div class="blocktitle">List comprehension vs generator expressions</div>
+<div class="blockcontent"><pre>
+<span class="comment"># use a list comprehension when a computed list <span class="builtin">is</span> the desired end result</span>
+l = [num * num <span class="statement">for</span> num <span class="builtin">in</span> <span class="builtin">range</span>(1, 101)]
+<span class="comment"># use a generator expression when the computed list <span class="builtin">is</span> just an intermediate step</span>
+total = sum(num * num
+            <span class="statement">for</span> num <span class="builtin">in</span> xrange(1, 1000000000))
 </pre></div></div>
 <h2>Tuple</h2>
 <div class="codeblock">
@@ -121,9 +143,21 @@ new_l = sorted(l)
 <span class="comment"># <span class="builtin">in</span>-place sort</span>
 l.sort()
 </pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">sort with keys</div>
+<div class="blockcontent"><pre>
+<span class="comment"># sort list based on the second column first, then fourth column</span>
+<span class="statement">def</span> my_key(item):
+    <span class="statement">return</span> (item[1], item[3])
+to_sort.sort(key=my_key)
+</pre></div></div>
 <h2>References</h2>
-<p><a href="http://www.python.net/~goodger/projects/pycon/2007/idiomatic/handout.html">Code Like a Pythonista: Idiomatic Python</a><br />
-<a href="http://www.pgbovine.net/python-idioms.htm">Python programming idioms by Philip Guo</a></p>
+<ul>
+<li><p><a href="http://www.python.net/~goodger/projects/pycon/2007/idiomatic/handout.html">Code Like a Pythonista: Idiomatic Python</a><br /></p>
+</li>
+<li><p><a href="http://www.pgbovine.net/python-idioms.htm">Python programming idioms by Philip Guo</a></p>
+</li>
+</ul>
 <div id="footer">
 <div id="footer-text">
 Page generated 2016-07-14, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
