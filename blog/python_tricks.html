@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Python Tips and Tricks</title>
+</head>
+<body>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+    var pageTracker = _gat._getTracker("UA-3247448-7");
+    pageTracker._trackPageview();
+} catch(err) {}</script>
+<div id="layout-content">
+<div id="toptitle">
+<h1>Python Tips and Tricks</h1>
+</div>
+<p>The following is a list of useful Python tricks and Tips.</p>
+<h2>String</h2>
+<div class="codeblock">
+<div class="blocktitle">Combine a list of strings to a single string</div>
+<div class="blockcontent"><pre>
+result = <span class="string">''</span>.join(strings)
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Interpolate variable within strings</div>
+<div class="blockcontent"><pre>
+name = <span class="string">'Jack'</span>
+age = 88
+msg = <span class="string">"%s <span class="builtin">is</span> %d years old"</span> % (name, age)
+</pre></div></div>
+<h2>Dictionary</h2>
+<div class="codeblock">
+<div class="blocktitle">Use in wherever possible</div>
+<div class="blockcontent"><pre>
+<span class="statement">for</span> key <span class="builtin">in</span> d:
+    <span class="statement">print</span> key
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Word count</div>
+<div class="blockcontent"><pre>
+<span class="statement">from</span> collections <span class="statement">import</span> defaultdict
+counts = defaultdict(int) <span class="comment"># default <span class="special">value</span> <span class="statement">for</span> int <span class="builtin">is</span> 0</span>
+<span class="statement">for</span> key <span class="builtin">in</span> d:
+    counts[key] += 1
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Iterate over keys and values</div>
+<div class="blockcontent"><pre>
+<span class="statement">for</span> (key, val) <span class="builtin">in</span> d.iteritems():
+    <span class="statement">print</span> key, val
+</pre></div></div>
+<h2>List</h2>
+<div class="codeblock">
+<div class="blocktitle">Use map or filter to apply functions to lists</div>
+<div class="blockcontent"><pre>
+<span class="comment"># Worse:</span>
+strings = []
+<span class="statement">for</span> d <span class="builtin">in</span> data:
+    strings.append(<span class="builtin">str</span>(d))
+
+<span class="comment"># Better:</span>
+strings = map(<span class="builtin">str</span>, data)
+</pre></div></div>
+<p>These functions make code much shorter and much faster, since the loop takes place entirely in the C API and never has to bind loop variables to Python objects.</p>
+<div class="codeblock">
+<div class="blocktitle">Iterate with indices</div>
+<div class="blockcontent"><pre>
+l = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]
+<span class="statement">for</span> (i, val) <span class="builtin">in</span> <span class="builtin">enumerate</span>(l):
+    <span class="statement">print</span> i, val <span class="comment"># i will be zero-based integer index <span class="statement">for</span> each element <span class="builtin">in</span> l.</span>
+</pre></div></div>
+<h2>Tuple</h2>
+<div class="codeblock">
+<div class="blocktitle">Unpack tuples during iteration</div>
+<div class="blockcontent"><pre>
+<span class="statement">for</span> (photo_name, (width, height)) <span class="builtin">in</span> photos:
+    <span class="comment"># do sth <span class="statement">with</span> photo_name, width, <span class="builtin">and</span> height</span>
+</pre></div></div>
+<h2>Others</h2>
+<div class="codeblock">
+<div class="blocktitle">Infinite loop</div>
+<div class="blockcontent"><pre>
+<span class="statement">while</span> 1: <span class="comment"># This <span class="builtin">is</span> the conversion.</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Catch errors vs if statements</div>
+<div class="blockcontent"><pre>
+Worse:
+<span class="comment">#check whether int conversion will <span class="statement">raise</span> an error</span>
+<span class="statement">if</span> <span class="builtin">not</span> isinstance(s, <span class="builtin">str</span>) <span class="builtin">or</span> <span class="builtin">not</span> s.isdigit:
+    <span class="statement">return</span> None
+<span class="statement">elif</span> len(s) &gt; 10:    <span class="comment">#too many digits <span class="statement">for</span> int conversion</span>
+    <span class="statement">return</span> None
+<span class="statement">else</span>:
+    <span class="statement">return</span> int(<span class="builtin">str</span>)
+
+Better:
+<span class="statement">try</span>:
+    <span class="statement">return</span> int(<span class="builtin">str</span>)
+<span class="statement">except</span> (<span class="error">TypeError</span>, <span class="error">ValueError</span>, <span class="error">OverflowError</span>): <span class="comment">#int conversion failed</span>
+    <span class="statement">return</span> None
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Swap without using temporary variables</div>
+<div class="blockcontent"><pre>
+a, b = b, a <span class="comment"># this <span class="builtin">is</span> the implicit tuple unpacking</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">create a new sorted list vs in-place sort</div>
+<div class="blockcontent"><pre>
+l = [3, 2, 4]
+<span class="comment"># create a new sorted list</span>
+new_l = sorted(l)
+<span class="comment"># <span class="builtin">in</span>-place sort</span>
+l.sort()
+</pre></div></div>
+<h2>References</h2>
+<p><a href="http://www.python.net/~goodger/projects/pycon/2007/idiomatic/handout.html">Code Like a Pythonista: Idiomatic Python</a><br />
+<a href="http://www.pgbovine.net/python-idioms.htm">Python programming idioms by Philip Guo</a></p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2016-07-14, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+</div>
+</div>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-37221477-1";
+urchinTracker();
+</script>
+</body>
+</html>

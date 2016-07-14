@@ -1,0 +1,118 @@
+# jemdoc: notime, analytics{UA-3247448-7}
+= Python Tips and Tricks
+
+The following is a list of useful Python tricks and Tips.
+
+== String
+~~~
+{Combine a list of strings to a single string}{python}
+result = ''.join(strings)
+~~~
+
+~~~
+{Interpolate variable within strings}{python}
+name = 'Jack'
+age = 88
+msg = "%s is %d years old" % (name, age)
+~~~
+
+
+== Dictionary
+~~~
+{Use in wherever possible}{python}
+for key in d:
+    print key
+~~~
+
+~~~
+{Word count}{python}
+from collections import defaultdict
+counts = defaultdict(int) # default value for int is 0
+for key in d:
+    counts[key] += 1
+~~~
+
+~~~
+{Iterate over keys and values}{python}
+for (key, val) in d.iteritems():
+    print key, val
+~~~
+
+== List
+
+~~~
+{Use map or filter to apply functions to lists}{python}
+# Worse:
+strings = []
+for d in data:
+    strings.append(str(d))
+
+# Better:
+strings = map(str, data)
+~~~
+These functions make code much shorter and much faster, since the loop takes place entirely in the C API and never has to bind loop variables to Python objects.
+
+~~~
+{Iterate with indices}{python}
+l = ['a', 'b', 'c']
+for (i, val) in enumerate(l):
+    print i, val # i will be zero-based integer index for each element in l.
+~~~
+
+
+== Tuple
+
+~~~
+{Unpack tuples during iteration}{python}
+for (photo_name, (width, height)) in photos:
+    # do sth with photo_name, width, and height
+~~~
+
+
+== Others
+
+~~~
+{Infinite loop}{python}
+while 1: # This is the conversion.
+~~~
+
+~~~
+{Catch errors vs if statements}{python}
+Worse:
+#check whether int conversion will raise an error
+if not isinstance(s, str) or not s.isdigit:
+    return None
+elif len(s) > 10:    #too many digits for int conversion
+    return None
+else:
+    return int(str)
+
+Better:
+try:
+    return int(str)
+except (TypeError, ValueError, OverflowError): #int conversion failed
+    return None
+~~~
+
+
+~~~
+{Swap without using temporary variables}{python}
+a, b = b, a # this is the implicit tuple unpacking
+~~~
+
+~~~
+{create a new sorted list vs in-place sort}{python}
+l = [3, 2, 4]
+# create a new sorted list
+new_l = sorted(l)
+# in-place sort
+l.sort()
+~~~
+
+
+
+
+
+== References
+[http://www.python.net/~goodger/projects/pycon/2007/idiomatic/handout.html Code Like a Pythonista: Idiomatic Python]\n
+[http://www.pgbovine.net/python-idioms.htm Python programming idioms by Philip Guo]
