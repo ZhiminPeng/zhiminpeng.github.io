@@ -10,33 +10,33 @@
 
    - [http://intlpress.com/site/pub/pages/journals/items/amsa/content/vols/0001/0001/a002/index.html Coordinate Friendly Structures, Algorithms and Applications]\n
      Z. Peng, T. Wu, Y. Xu, M. Yan, W. Yin\n
-     Annals of Mathematical Sciences and Applications, 1(1), pp. 57–119, 2016
+     Annals of Mathematical Sciences and Applications, 2016
 
    - [https://arxiv.org/abs/1506.02396 ARock: an Algorithmic Framework for Asynchronous Parallel Coordinate Updates]\n
      Z. Peng, Y. Xu, M. Yan, W. Yin\n
-     SIAM Journal on Scientific Computing, 38 (2016), A2851-A2879
+     SIAM Journal on Scientific Computing, 2016
 
    - [http://www.math.ucla.edu/~wotaoyin/papers/GRock/ Parallel and Distributed Sparse Optimization]\n
      Z. Peng, M. Yan, W. Yin\n
-     IEEE Asilomar Conference on Signals, Systems, and Computers, 2013\n
+     IEEE Asilomar Conference on Signals, Systems, and Computers, 2013
 
    - Sparse Radon transform with dual gradient ascent method \[[papers/sparseRadon.pdf paper]\]~
      \[[papers/sparse_slides_liu.pdf slides]\]\n
      Y. Liu, Z. Peng, W. Symes, W. Yin\n
-     Proc. 84th Annual International Meeting of the Society of Exploration Geophysicists, ST 2 (2013)
+     Proc. 84th Annual International Meeting of the Society of Exploration Geophysicists, 2013
 
-   - [parallel_ADMM.html Parallel Multi-Block ADMM with o(1/k) Convergence]\n
+   - [http://www.math.ucla.edu/~wotaoyin/papers/pdf/Jacobi_ADMM.pdf Parallel Multi-Block ADMM with o(1/k) Convergence]\n
      W. Deng, M.-J. Lai, Z. Peng, W. Yin\n
-     Submitted.
+     Journal of Scientific Computing, 2016
 
 == Compressive Sensing
    - GAITA: A Gauss-Seidel Iterative Thresholding Algorithm for $\ell_q$  Regularized Least Squares Regression \n
-   J. Zeng, Z. Peng, S. Lin \n
-   Submitted, 2016
+     J. Zeng, Z. Peng, S. Lin \n
+     Submitted, 2016
 
    - [http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7060714 Linear Convergence of Adaptively Iterative Thresholding Algorithms for Compressed Sensing]\n
-   Y. Wang, J. Zeng, Z. Peng, X. Chang,  Z. Xu \n
-   IEEE Transactions on Signal Processing, 2015
+     Y. Wang, J. Zeng, Z. Peng, X. Chang,  Z. Xu \n
+     IEEE Transactions on Signal Processing, 2015
 
 == Anomaly Detection
    - Optimal Sparse Kernel Learning for Hyperspectral Anomaly Detection \[[papers/WHISPERS_paper.pdf paper]\]~
