@@ -4,9 +4,9 @@
 [https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en Google scholar profile]
 
 == Large-scale Convex Optimization and Applications
-   - [https://arxiv.org/abs/1612.04425 On the Convergence of Asynchronous Parallel Iteration with Arbitrary Delays]\n
+   - [https://link.springer.com/article/10.1007%2Fs40305-017-0183-1 On the Convergence of Asynchronous Parallel Iteration with Unbounded Delays]\n
      Z. Peng, Y. Xu, M. Yan and W. Yin\n
-     Submitted, 2016
+     Journal of the Operations Research Society of China, 2017
 
    - [http://www.math.ucla.edu/~wotaoyin/papers/tmac.html TMAC: A Toolbox of Modern Async-Parallel, Coordinate, Splitting, and Stochastic Methods]\n
      B. Edmunds, Z. Peng, and W. Yin\n
@@ -34,7 +34,7 @@
      Journal of Scientific Computing, 2016
 
 == Compressive Sensing
-   - GAITA: A Gauss-Seidel Iterative Thresholding Algorithm for $\ell_q$  Regularized Least Squares Regression \n
+   - [https://www.sciencedirect.com/science/article/pii/S0377042717300146GAITA: A Gauss-Seidel Iterative Thresholding Algorithm for $\ell_q$  Regularized Least Squares Regression] \n
      J. Zeng, Z. Peng, S. Lin \n
      Journal of Computational and Applied Mathematics, 2017
 
