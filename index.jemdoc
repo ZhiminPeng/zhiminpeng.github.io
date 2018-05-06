@@ -4,30 +4,18 @@
 ~~~
 {}{img_left}{images/Me.jpg}{80px}{100px}{}
 Zhimin Peng, Ph.D. \n
-Sr. Data Scientist at [http://www.twilio.com Twilio] \n
+Research Scientist at [https://www.amazon.com/Amazon-Echo-And-Alexa-Devices/b?ie=UTF8&node=9818047011 Amazon Alexa] \n
 (formerly) [http://www.math.ucla.edu Department of Mathematics], [http://www.ucla.edu UCLA] \n
 ~~~
 
-== News
-
-~~~
-- (12-09-2017) [https://link.springer.com/article/10.1007%2Fs40305-017-0183-1 Async-Parallel with Unbounded Delays] is available on Journal of the Operations Research Society of China.
-- (12-14-2016) [https://arxiv.org/abs/1612.04425 Async-Parallel with Arbitrary Delays] is available on ArXiv.
-- (11-12-2016) [http://link.springer.com/article/10.1007/s10915-016-0318-2 Parallel Multi-Block ADMM] is online on Journal of Scientific Computing.
-- (09-08-2016) [http://epubs.siam.org/doi/10.1137/15M1024950 ARock] is online on SIAM Journal on Scientific Computing.
-- (07-18-2016) Started my full time at Twilio.
-- (06-04-2016) I and Brent presented [https://github.com/uclaopt/TMAC TMAC] at the Southern California Applied Mathematics Symposium.
-- (05-25-2016) I presented our work on CF and ARock at the Intl. Conference on Approximation Theory.
-- (05-13-2016) I passed my final oral exam.
-- (01-05-2016) We just uploaded a new [http://arxiv.org/abs/1601.00863 paper] on coordinate friendly structures.
-- (07-16-2015) I presented our work on ARock at ISMP. The slides are [slides/ARock_ISMP.pdf here].
-- (06-15-2015) Started my internship at Twilio.
-~~~
 
 == Research Interests
    - Optimization
 
-   - Anomaly detection
+   - Machine Learning
+
+   - Natural Language Understanding
+
 
 == Contact Information
 
