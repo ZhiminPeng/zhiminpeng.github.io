@@ -1,73 +1,353 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Zhimin Peng</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zhimin Peng</title>
+  <meta name="description" content="Zhimin Peng — Principal Applied Scientist at Amazon, PhD in Applied Mathematics from UCLA. Working on search, recommendation, and agentic AI systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #faf9f7;
+      --text:     #1c1c1c;
+      --muted:    #6b7280;
+      --subtle:   #9ca3af;
+      --border:   #e5e7eb;
+      --accent:   #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface:  #f3f4f6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* Layout */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Nav */
+    nav {
+      padding: 40px 0 0;
+      margin-bottom: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-name:hover { text-decoration: none; color: var(--text); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* Sections */
+    section { margin-bottom: 56px; }
+
+    /* About / Hero */
+    .about-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .about-body {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .about-body p { margin-bottom: 14px; }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    /* Section headers */
+    h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Currently */
+    .currently-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      font-size: 0.975rem;
+    }
+    .currently-label {
+      flex-shrink: 0;
+      width: 90px;
+      color: var(--subtle);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding-top: 2px;
+    }
+    .currently-value { color: var(--text); line-height: 1.6; }
+
+    /* Research interests */
+    .interest-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .interest-list li {
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+    }
+
+    /* Papers list */
+    .paper-list { list-style: none; }
+    .paper-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .paper-list li:first-child { border-top: 1px solid var(--border); }
+    .paper-title { font-weight: 500; color: var(--text); display: block; margin-bottom: 4px; }
+    .paper-title a { color: var(--text); }
+    .paper-title a:hover { color: var(--accent); text-decoration: none; }
+    .paper-meta { font-size: 0.85rem; color: var(--muted); }
+    .paper-venue { font-style: italic; }
+
+    /* Writing list */
+    .writing-list { list-style: none; }
+    .writing-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .writing-list li:first-child { border-top: 1px solid var(--border); }
+    .writing-title { color: var(--text); font-weight: 500; }
+    .writing-title a { color: var(--text); }
+    .writing-title a:hover { color: var(--accent); text-decoration: none; }
+    .writing-date { flex-shrink: 0; font-size: 0.85rem; color: var(--subtle); }
+    .writing-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      margin-left: 8px;
+      white-space: nowrap;
+    }
+
+    /* Contact */
+    .contact-list { list-style: none; }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+    .contact-list li span { min-width: 80px; font-size: 0.85rem; }
+
+    /* Footer */
+    footer {
+      margin-top: 24px;
+      padding: 32px 0 48px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    @media (max-width: 520px) {
+      nav { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .writing-list li { flex-direction: column; gap: 4px; }
+      .currently-label { width: 70px; }
+    }
+  </style>
 </head>
 <body>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-    var pageTracker = _gat._getTracker("UA-37221477-1");
-    pageTracker._trackPageview();
-} catch(err) {}</script>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">Zhimin Peng</div>
-<div class="menu-item"><a href="index.html" class="current">Home</a></div>
-<div class="menu-item"><a href="cv.html">CV</a></div>
-<div class="menu-category">Research</div>
-<div class="menu-item"><a href="paper.html">Publication</a></div>
-<div class="menu-item"><a href="software.html">Software</a></div>
-<div class="menu-category">Others</div>
-<div class="menu-item"><a href="blog.html">Blog</a></div>
-<div class="menu-item"><a href="link.html">Links</a></div>
-</td>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Zhimin Peng</h1>
+<div class="page">
+
+  <nav>
+    <a href="index.html" class="nav-name">Zhimin Peng</a>
+    <ul class="nav-links">
+      <li><a href="papers.html">Research</a></li>
+      <li><a href="https://latentvaluelab.com" target="_blank" rel="noopener">Consulting</a></li>
+      <li><a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener">Writing</a></li>
+      <li><a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
+    </ul>
+  </nav>
+
+  <!-- About -->
+  <section>
+    <h1 class="about-name">Zhimin Peng</h1>
+    <div class="about-body">
+      <p>
+        I'm a Principal Applied Scientist at Amazon, where I work on search, recommendation, and agentic conversational AI systems for Fire TV. Before that, I did my PhD in Applied Mathematics at UCLA, focusing on large-scale optimization and its applications to machine learning.
+      </p>
+      <p>
+        I'm also the founder of <a href="https://latentvaluelab.com" target="_blank" rel="noopener">Latent Value Lab</a>, where I partner with small and mid-size companies to find the AI and ML opportunities in their business and build systems to capture them.
+      </p>
+      <p>
+        My work spans the full stack — from mathematical foundations to production systems at scale. I'm particularly interested in the gap between what ML can do in research and what it actually does in deployed products.
+      </p>
+    </div>
+  </section>
+
+  <!-- Currently -->
+  <section>
+    <h2>Currently</h2>
+    <div class="currently-item">
+      <span class="currently-label">Working on</span>
+      <span class="currently-value">Search and agentic conversational systems for Fire TV at Amazon</span>
+    </div>
+    <div class="currently-item">
+      <span class="currently-label">Consulting</span>
+      <span class="currently-value">Helping small and mid-size companies build production ML systems via <a href="https://latentvaluelab.com" target="_blank" rel="noopener">Latent Value Lab</a></span>
+    </div>
+    <div class="currently-item">
+      <span class="currently-label">Writing</span>
+      <span class="currently-value">Practical posts on search, recommendation, and AI systems at <a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener">latentvaluelab.com/blog</a></span>
+    </div>
+    <div class="currently-item">
+      <span class="currently-label">Based in</span>
+      <span class="currently-value">Sunnyvale, CA</span>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section>
+    <h2>Research Interests</h2>
+    <ul class="interest-list">
+      <li>Large-scale Optimization</li>
+      <li>Search & Retrieval</li>
+      <li>Recommendation Systems</li>
+      <li>Agentic AI</li>
+      <li>Anomaly Detection</li>
+      <li>Distributed Algorithms</li>
+    </ul>
+    <p style="font-size:0.95rem; color: var(--muted); margin-bottom: 20px;">
+      My academic research focused on asynchronous parallel optimization algorithms — methods that enable large-scale ML on distributed systems without tight coordination constraints. See my <a href="papers.html">publications</a> or <a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> for the full list.
+    </p>
+
+    <h2>Selected Papers</h2>
+    <ul class="paper-list">
+      <li>
+        <span class="paper-title">
+          <a href="https://arxiv.org/abs/1506.02396" target="_blank" rel="noopener">ARock: an Algorithmic Framework for Asynchronous Parallel Coordinate Updates</a>
+        </span>
+        <span class="paper-meta">Z. Peng, Y. Xu, M. Yan, W. Yin &mdash; <span class="paper-venue">SIAM Journal on Scientific Computing, 2016</span></span>
+      </li>
+      <li>
+        <span class="paper-title">
+          <a href="http://intlpress.com/site/pub/pages/journals/items/amsa/content/vols/0001/0001/a002/index.html" target="_blank" rel="noopener">Coordinate Friendly Structures, Algorithms and Applications</a>
+        </span>
+        <span class="paper-meta">Z. Peng, T. Wu, Y. Xu, M. Yan, W. Yin &mdash; <span class="paper-venue">Annals of Mathematical Sciences and Applications, 2016</span></span>
+      </li>
+      <li>
+        <span class="paper-title">
+          <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7272823" target="_blank" rel="noopener">Sparse Kernel Learning-based Feature Selection for Anomaly Detection</a>
+        </span>
+        <span class="paper-meta">Z. Peng, P. Gurram, H. Kwon, W. Yin &mdash; <span class="paper-venue">IEEE Transactions on Aerospace and Electronic Systems, 2015</span></span>
+      </li>
+    </ul>
+    <p style="margin-top:14px; font-size:0.9rem;">
+      <a href="papers.html">View all publications →</a>
+    </p>
+  </section>
+
+  <!-- Writing -->
+  <section>
+    <h2>Writing</h2>
+    <ul class="writing-list">
+      <li>
+        <span class="writing-title">
+          <a href="https://latentvaluelab.com/posts/how-search-works-at-scale.html" target="_blank" rel="noopener">
+            How Search Works at Scale: From Query to Result in Milliseconds
+          </a>
+          <span class="writing-tag">Search</span>
+        </span>
+        <span class="writing-date">Mar 2026</span>
+      </li>
+    </ul>
+    <p style="margin-top:14px; font-size:0.9rem;">
+      <a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener">All posts →</a>
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li>
+        <span>Email</span>
+        <a href="mailto:zhiminp@gmail.com">zhiminp@gmail.com</a>
+      </li>
+      <li>
+        <span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/zhimin-peng-20005033/" target="_blank" rel="noopener">zhimin-peng-20005033</a>
+      </li>
+      <li>
+        <span>Scholar</span>
+        <a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </li>
+      <li>
+        <span>Consulting</span>
+        <a href="https://latentvaluelab.com" target="_blank" rel="noopener">latentvaluelab.com</a>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 Zhimin Peng
+  </footer>
+
 </div>
-<table class="imgtable"><tr><td>
-<img src="images/Me.jpg" alt="80px" width="100px" />&nbsp;</td>
-<td align="left"><p>Zhimin Peng, Ph.D. <br />
-Research Scientist at <a href="https://www.amazon.com/Amazon-Echo-And-Alexa-Devices/b?ie=UTF8&amp;node=9818047011">Amazon Alexa</a> <br />
-(formerly) <a href="http://www.math.ucla.edu">Department of Mathematics</a>, <a href="http://www.ucla.edu">UCLA</a> <br /></p>
-</td></tr></table>
-<h2>Research Interests</h2>
-<ul>
-<li><p>Optimization</p>
-</li>
-</ul>
-<ul>
-<li><p>Machine Learning</p>
-</li>
-</ul>
-<ul>
-<li><p>Natural Language Understanding</p>
-</li>
-</ul>
-<h2>Contact Information</h2>
-<p>Email: zhiminp at gmail dot com</p>
-<div id="footer">
-<div id="footer-text">
-Page generated 2018-05-06, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
-</div>
-</div>
-</td>
-</tr>
-</table>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-37221477-1";
-urchinTracker();
-</script>
 </body>
 </html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Zhimin Peng</title>
+  <meta name="description" content="Publications and research by Zhimin Peng — large-scale optimization, machine learning, anomaly detection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #faf9f7;
+      --text:     #1c1c1c;
+      --muted:    #6b7280;
+      --subtle:   #9ca3af;
+      --border:   #e5e7eb;
+      --accent:   #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface:  #f3f4f6;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    nav {
+      padding: 40px 0 0;
+      margin-bottom: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-name:hover { text-decoration: none; color: var(--text); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.active { color: var(--text); font-weight: 600; }
+
+    section { margin-bottom: 48px; }
+
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .page-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .paper-list { list-style: none; }
+    .paper-list li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .paper-list li:first-child { border-top: 1px solid var(--border); }
+    .paper-title {
+      font-size: 0.975rem;
+      font-weight: 500;
+      color: var(--text);
+      display: block;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+    .paper-title a { color: var(--text); }
+    .paper-title a:hover { color: var(--accent); text-decoration: none; }
+    .paper-authors { font-size: 0.875rem; color: var(--muted); margin-bottom: 3px; }
+    .paper-authors strong { color: var(--text); font-weight: 600; }
+    .paper-venue { font-size: 0.875rem; color: var(--subtle); font-style: italic; }
+    .paper-links { margin-top: 6px; display: flex; gap: 12px; }
+    .paper-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .paper-links a:hover { background: #dbeafe; text-decoration: none; }
+
+    footer {
+      margin-top: 24px;
+      padding: 32px 0 48px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    @media (max-width: 520px) {
+      nav { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a href="index.html" class="nav-name">Zhimin Peng</a>
+    <ul class="nav-links">
+      <li><a href="papers.html" class="active">Research</a></li>
+      <li><a href="https://latentvaluelab.com" target="_blank" rel="noopener">Consulting</a></li>
+      <li><a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener">Writing</a></li>
+      <li><a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
+    </ul>
+  </nav>
+
+  <h1>Research</h1>
+  <p class="page-sub">
+    My academic work focused on large-scale optimization algorithms for machine learning — particularly asynchronous and parallel methods that scale to distributed systems. Full list on <a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+  </p>
+
+  <!-- Optimization -->
+  <section>
+    <h2>Large-Scale Optimization & Distributed Algorithms</h2>
+    <ul class="paper-list">
+
+      <li>
+        <span class="paper-title">
+          <a href="https://arxiv.org/abs/1506.02396" target="_blank" rel="noopener">ARock: an Algorithmic Framework for Asynchronous Parallel Coordinate Updates</a>
+        </span>
+        <div class="paper-authors"><strong>Z. Peng</strong>, Y. Xu, M. Yan, W. Yin</div>
+        <div class="paper-venue">SIAM Journal on Scientific Computing, 2016</div>
+        <div class="paper-links"><a href="https://arxiv.org/abs/1506.02396" target="_blank" rel="noopener">arXiv</a></div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          <a href="http://intlpress.com/site/pub/pages/journals/items/amsa/content/vols/0001/0001/a002/index.html" target="_blank" rel="noopener">Coordinate Friendly Structures, Algorithms and Applications</a>
+        </span>
+        <div class="paper-authors"><strong>Z. Peng</strong>, T. Wu, Y. Xu, M. Yan, W. Yin</div>
+        <div class="paper-venue">Annals of Mathematical Sciences and Applications, 2016</div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          <a href="https://link.springer.com/article/10.1007%2Fs40305-017-0183-1" target="_blank" rel="noopener">On the Convergence of Asynchronous Parallel Iteration with Unbounded Delays</a>
+        </span>
+        <div class="paper-authors"><strong>Z. Peng</strong>, Y. Xu, M. Yan, W. Yin</div>
+        <div class="paper-venue">Journal of the Operations Research Society of China, 2017</div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          <a href="http://www.math.ucla.edu/~wotaoyin/papers/pdf/Jacobi_ADMM.pdf" target="_blank" rel="noopener">Parallel Multi-Block ADMM with o(1/k) Convergence</a>
+        </span>
+        <div class="paper-authors">W. Deng, M.-J. Lai, <strong>Z. Peng</strong>, W. Yin</div>
+        <div class="paper-venue">Journal of Scientific Computing, 2016</div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          <a href="http://www.math.ucla.edu/~wotaoyin/papers/tmac.html" target="_blank" rel="noopener">TMAC: A Toolbox of Modern Async-Parallel, Coordinate, Splitting, and Stochastic Methods</a>
+        </span>
+        <div class="paper-authors">B. Edmunds, <strong>Z. Peng</strong>, W. Yin</div>
+        <div class="paper-venue">UCLA CAM Report 16-38, 2016</div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          Parallel and Distributed Sparse Optimization
+        </span>
+        <div class="paper-authors"><strong>Z. Peng</strong>, M. Yan, W. Yin</div>
+        <div class="paper-venue">IEEE Asilomar Conference on Signals, Systems, and Computers, 2013</div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- Compressive Sensing -->
+  <section>
+    <h2>Compressive Sensing</h2>
+    <ul class="paper-list">
+
+      <li>
+        <span class="paper-title">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0377042717300146" target="_blank" rel="noopener">A Gauss-Seidel Iterative Thresholding Algorithm for ℓ<sub>q</sub> Regularized Least Squares Regression</a>
+        </span>
+        <div class="paper-authors">J. Zeng, <strong>Z. Peng</strong>, S. Lin</div>
+        <div class="paper-venue">Journal of Computational and Applied Mathematics, 2017</div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7060714" target="_blank" rel="noopener">Linear Convergence of Adaptively Iterative Thresholding Algorithms for Compressed Sensing</a>
+        </span>
+        <div class="paper-authors">Y. Wang, J. Zeng, <strong>Z. Peng</strong>, X. Chang, Z. Xu</div>
+        <div class="paper-venue">IEEE Transactions on Signal Processing, 2015</div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          Sparse Radon Transform with Dual Gradient Ascent Method
+        </span>
+        <div class="paper-authors">Y. Liu, <strong>Z. Peng</strong>, W. Symes, W. Yin</div>
+        <div class="paper-venue">Proc. 84th Annual International Meeting of the Society of Exploration Geophysicists, 2013</div>
+        <div class="paper-links">
+          <a href="papers/sparseRadon.pdf">paper</a>
+          <a href="papers/sparse_slides_liu.pdf">slides</a>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- Anomaly Detection -->
+  <section>
+    <h2>Anomaly Detection</h2>
+    <ul class="paper-list">
+
+      <li>
+        <span class="paper-title">
+          <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7272823" target="_blank" rel="noopener">Sparse Kernel Learning-based Feature Selection for Anomaly Detection</a>
+        </span>
+        <div class="paper-authors"><strong>Z. Peng</strong>, P. Gurram, H. Kwon, W. Yin</div>
+        <div class="paper-venue">IEEE Transactions on Aerospace and Electronic Systems, 2015</div>
+      </li>
+
+      <li>
+        <span class="paper-title">
+          Optimal Sparse Kernel Learning for Hyperspectral Anomaly Detection
+        </span>
+        <div class="paper-authors"><strong>Z. Peng</strong>, P. Gurram, H. Kwon, W. Yin</div>
+        <div class="paper-venue">IEEE WHISPERS, Gainesville, FL, 2013</div>
+        <div class="paper-links">
+          <a href="papers/WHISPERS_paper.pdf">paper</a>
+          <a href="papers/WHISPERS_2013_slides.pdf">slides</a>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <footer>© 2026 Zhimin Peng</footer>
+
+</div>
+</body>
+</html>
