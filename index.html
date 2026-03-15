@@ -7,270 +7,201 @@
   <meta name="description" content="Zhimin Peng — Principal Applied Scientist at Amazon. Writing about search, recommendation, and applied AI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet" />
   <style>
-    /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── Base ── */
-    :root {
-      --bg:     #ffffff;
-      --text:   #333333;
-      --muted:  #666666;
-      --subtle: #999999;
-      --border: #eeeeee;
-      --link:   #0070f3;
-      --link-hover: #0051a8;
-    }
-
-    html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: Raleway, Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #333;
       font-size: 16px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: var(--link-hover);
-    }
+    a { color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* ── Layout ── */
-    .wrap {
-      max-width: 700px;
+    .container {
+      max-width: 740px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     /* ── Nav ── */
-    header {
-      border-bottom: 1px solid var(--border);
+    nav {
+      border-bottom: 1px solid #eee;
       margin-bottom: 48px;
     }
-    .nav {
+    nav .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 56px;
+      height: 52px;
     }
     .nav-brand {
-      font-size: 1rem;
       font-weight: 700;
-      color: var(--text);
+      font-size: 0.95rem;
+      color: #333;
       text-decoration: none;
-      letter-spacing: -0.01em;
     }
-    .nav-brand:hover { text-decoration: none; color: var(--text); }
-    .nav-items {
+    .nav-brand:hover { text-decoration: none; color: #333; }
+    nav ul {
+      list-style: none;
       display: flex;
       gap: 24px;
-      list-style: none;
     }
-    .nav-items a {
+    nav ul a {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--muted);
+      color: #555;
       text-decoration: none;
     }
-    .nav-items a:hover { color: var(--text); text-decoration: none; }
+    nav ul a:hover { color: #007bff; text-decoration: none; }
 
     /* ── Hero ── */
-    .hero {
-      margin-bottom: 48px;
-    }
+    .hero { margin-bottom: 48px; }
     .hero h1 {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 700;
       line-height: 1.3;
-      letter-spacing: -0.02em;
       margin-bottom: 16px;
-      color: var(--text);
+      color: #333;
     }
     .hero p {
-      font-size: 1rem;
-      color: var(--text);
       margin-bottom: 12px;
-      max-width: 620px;
+      font-size: 1rem;
     }
     .hero ul {
-      margin: 12px 0 12px 20px;
-      color: var(--text);
+      margin: 8px 0 12px 20px;
     }
-    .hero ul li { margin-bottom: 4px; font-size: 1rem; }
+    .hero ul li { margin-bottom: 6px; }
 
     /* ── Sections ── */
-    .section { margin-bottom: 48px; }
-
-    .section-title {
+    section { margin-bottom: 40px; }
+    section h2 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--text);
-      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: #333;
     }
 
-    /* ── Post list ── */
+    /* ── Post / Paper list ── */
     .post-list { list-style: none; }
     .post-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 7px 0;
       font-size: 0.975rem;
+      border-bottom: 1px solid #f0f0f0;
     }
-    .post-list li:first-child { border-top: 1px solid var(--border); }
-    .post-list a {
-      color: var(--text);
-      font-weight: 600;
-      flex: 1;
+    .post-list li:first-child { border-top: 1px solid #f0f0f0; }
+    .post-list code {
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 0.8rem;
+      background: #f5f5f5;
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: #555;
+      margin-right: 4px;
     }
-    .post-list a:hover { color: var(--link); text-decoration: none; }
-    .post-date {
-      flex-shrink: 0;
-      font-size: 0.85rem;
-      color: var(--subtle);
-      font-weight: 400;
-    }
+    .post-list a { color: #333; font-weight: 600; }
+    .post-list a:hover { color: #007bff; text-decoration: none; }
 
-    /* ── Paper list ── */
-    .paper-list { list-style: none; }
-    .paper-list li {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-    }
-    .paper-list li:first-child { border-top: 1px solid var(--border); }
-    .paper-list a {
-      font-weight: 600;
-      color: var(--text);
-    }
-    .paper-list a:hover { color: var(--link); text-decoration: none; }
-    .paper-meta {
-      font-size: 0.85rem;
-      color: var(--subtle);
-      margin-top: 3px;
-    }
-
-    /* ── "More" link ── */
-    .more-link {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--link);
-    }
+    .more { font-size: 0.9rem; margin-top: 12px; display: inline-block; }
 
     /* ── Footer ── */
     footer {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid #eee;
       padding: 24px 0 40px;
-      font-size: 0.875rem;
-      color: var(--subtle);
+      font-size: 0.85rem;
+      color: #999;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
     }
-    footer a { color: var(--subtle); font-weight: 600; }
-    footer a:hover { color: var(--link); text-decoration: none; }
+    footer a { color: #999; }
+    footer a:hover { color: #007bff; text-decoration: none; }
 
-    /* ── Responsive ── */
     @media (max-width: 520px) {
-      .nav-items { gap: 16px; }
-      .post-list li { flex-direction: column; gap: 2px; }
-      .post-date { font-size: 0.8rem; }
+      nav ul { gap: 14px; }
+      nav ul a { font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <nav class="nav">
-      <a href="index.html" class="nav-brand">Zhimin Peng</a>
-      <ul class="nav-items">
+  <nav>
+    <div class="container">
+      <a href="/" class="nav-brand">zhiminpeng</a>
+      <ul>
         <li><a href="papers.html">Research</a></li>
         <li><a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener">Writing</a></li>
         <li><a href="https://latentvaluelab.com" target="_blank" rel="noopener">Consulting</a></li>
         <li><a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Hi, I'm Zhimin Peng,</h1>
-    <p>
-      a Principal Applied Scientist at <a href="https://www.amazon.com" target="_blank" rel="noopener">Amazon</a>, where I work on search, recommendation, and agentic conversational AI for Fire TV. I hold a PhD in Applied Mathematics from <a href="https://www.math.ucla.edu" target="_blank" rel="noopener">UCLA</a>.
-    </p>
-    <p>I spend my time:</p>
-    <ul>
-      <li>Building large-scale ML systems that serve tens of millions of users</li>
-      <li><a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener">Writing</a> about search, recommendation, and applied AI</li>
-      <li>Helping companies find and capture AI opportunities via <a href="https://latentvaluelab.com" target="_blank" rel="noopener">Latent Value Lab</a></li>
-      <li>Previously: large-scale optimization, distributed algorithms, and anomaly detection research</li>
-    </ul>
-    <p style="margin-top:14px;">
-      Reach me at <a href="mailto:zhiminp@gmail.com">zhiminp@gmail.com</a> or on <a href="https://www.linkedin.com/in/zhimin-peng-20005033/" target="_blank" rel="noopener">LinkedIn</a>.
-    </p>
-  </section>
+  <div class="container">
 
-  <!-- Writing -->
-  <section class="section">
-    <div class="section-title">Latest Writing</div>
-    <ul class="post-list">
-      <li>
-        <a href="https://latentvaluelab.com/posts/how-search-works-at-scale.html" target="_blank" rel="noopener">
-          How Search Works at Scale: From Query to Result in Milliseconds
-        </a>
-        <span class="post-date">15 Mar 2026</span>
-      </li>
-    </ul>
-    <a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener" class="more-link">All posts →</a>
-  </section>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Hi, I'm Zhimin Peng,</h1>
+      <p>
+        a Principal Applied Scientist at <a href="https://www.amazon.com" target="_blank" rel="noopener">Amazon</a>, building search, recommendation, and agentic conversational AI systems for Fire TV. I hold a PhD in Applied Mathematics from <a href="https://www.math.ucla.edu" target="_blank" rel="noopener">UCLA</a>.
+      </p>
+      <p>I spend my time:</p>
+      <ul>
+        <li>Building large-scale ML systems that serve tens of millions of users at Amazon</li>
+        <li><a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener">Writing</a> about search, recommendation, and applied AI</li>
+        <li>Helping small and mid-size companies capture AI opportunities via <a href="https://latentvaluelab.com" target="_blank" rel="noopener">Latent Value Lab</a></li>
+        <li>Researching large-scale optimization and distributed algorithms — see my <a href="papers.html">publications</a></li>
+      </ul>
+      <p style="margin-top:12px;">
+        Reach me at <a href="mailto:zhiminp@gmail.com">zhiminp@gmail.com</a> or on <a href="https://www.linkedin.com/in/zhimin-peng-20005033/" target="_blank" rel="noopener">LinkedIn</a>.
+      </p>
+    </section>
 
-  <!-- Research -->
-  <section class="section">
-    <div class="section-title">Selected Research</div>
-    <ul class="paper-list">
-      <li>
-        <a href="https://arxiv.org/abs/1506.02396" target="_blank" rel="noopener">ARock: an Algorithmic Framework for Asynchronous Parallel Coordinate Updates</a>
-        <div class="paper-meta">Z. Peng, Y. Xu, M. Yan, W. Yin &mdash; SIAM Journal on Scientific Computing, 2016</div>
-      </li>
-      <li>
-        <a href="http://intlpress.com/site/pub/pages/journals/items/amsa/content/vols/0001/0001/a002/index.html" target="_blank" rel="noopener">Coordinate Friendly Structures, Algorithms and Applications</a>
-        <div class="paper-meta">Z. Peng, T. Wu, Y. Xu, M. Yan, W. Yin &mdash; Annals of Mathematical Sciences and Applications, 2016</div>
-      </li>
-      <li>
-        <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7272823" target="_blank" rel="noopener">Sparse Kernel Learning-based Feature Selection for Anomaly Detection</a>
-        <div class="paper-meta">Z. Peng, P. Gurram, H. Kwon, W. Yin &mdash; IEEE Transactions on Aerospace and Electronic Systems, 2015</div>
-      </li>
-    </ul>
-    <a href="papers.html" class="more-link">All publications →</a>
-  </section>
+    <!-- Writing -->
+    <section>
+      <h2>Latest Writing</h2>
+      <ul class="post-list">
+        <li>
+          <code>15 Mar 2026</code> · <a href="https://latentvaluelab.com/posts/how-search-works-at-scale.html" target="_blank" rel="noopener">How Search Works at Scale: From Query to Result in Milliseconds</a>
+        </li>
+      </ul>
+      <a href="https://latentvaluelab.com/blog.html" target="_blank" rel="noopener" class="more">All posts →</a>
+    </section>
 
-  <footer>
-    <span>© 2026 Zhimin Peng</span>
-    <span>
-      <a href="mailto:zhiminp@gmail.com">Email</a> &nbsp;·&nbsp;
-      <a href="https://www.linkedin.com/in/zhimin-peng-20005033/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp;
-      <a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a> &nbsp;·&nbsp;
-      <a href="https://latentvaluelab.com" target="_blank" rel="noopener">Latent Value Lab</a>
-    </span>
-  </footer>
+    <!-- Research -->
+    <section>
+      <h2>Selected Research</h2>
+      <ul class="post-list">
+        <li>
+          <code>2016</code> · <a href="https://arxiv.org/abs/1506.02396" target="_blank" rel="noopener">ARock: an Algorithmic Framework for Asynchronous Parallel Coordinate Updates</a>
+        </li>
+        <li>
+          <code>2016</code> · <a href="http://intlpress.com/site/pub/pages/journals/items/amsa/content/vols/0001/0001/a002/index.html" target="_blank" rel="noopener">Coordinate Friendly Structures, Algorithms and Applications</a>
+        </li>
+        <li>
+          <code>2015</code> · <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7272823" target="_blank" rel="noopener">Sparse Kernel Learning-based Feature Selection for Anomaly Detection</a>
+        </li>
+      </ul>
+      <a href="papers.html" class="more">All publications →</a>
+    </section>
 
-</div>
+    <footer>
+      <span>© 2026 Zhimin Peng</span>
+      <span>
+        <a href="mailto:zhiminp@gmail.com">Email</a> &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/zhimin-peng-20005033/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp;
+        <a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a> &nbsp;·&nbsp;
+        <a href="https://latentvaluelab.com" target="_blank" rel="noopener">Latent Value Lab</a>
+      </span>
+    </footer>
+
+  </div>
+
 </body>
 </html>
