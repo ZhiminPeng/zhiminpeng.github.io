@@ -48,6 +48,8 @@ POST_TEMPLATE = """\
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
 
+    html {{ overflow-y: scroll; }}
+
     body {{
       font-family: Raleway, Helvetica, Arial, sans-serif;
       background: #fff;
