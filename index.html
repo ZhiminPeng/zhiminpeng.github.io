@@ -8,21 +8,55 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Prevent flash of wrong theme -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
   <style>
+    :root {
+      --bg: #fff;
+      --text: #333;
+      --subtext: #555;
+      --muted: #999;
+      --border: #eee;
+      --border-list: #f0f0f0;
+      --code-bg: #f5f5f5;
+      --code-text: #555;
+      --link: #007bff;
+    }
+
+    html.dark {
+      --bg: #1c1c1e;
+      --text: #e5e5e7;
+      --subtext: #aeaeb2;
+      --muted: #636366;
+      --border: #38383a;
+      --border-list: #2c2c2e;
+      --code-bg: #2c2c2e;
+      --code-text: #aeaeb2;
+      --link: #5eb0ff;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { overflow-y: scroll; }
 
     body {
       font-family: Raleway, Helvetica, Arial, sans-serif;
-      background: #fff;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
       font-size: 16px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      transition: background 0.2s, color 0.2s;
     }
 
-    a { color: #007bff; text-decoration: none; }
+    a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .container {
@@ -33,7 +67,7 @@
 
     /* ── Nav ── */
     nav {
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--border);
       margin-bottom: 48px;
     }
     nav .container {
@@ -45,22 +79,40 @@
     .nav-brand {
       font-weight: 700;
       font-size: 0.95rem;
-      color: #333;
+      color: var(--text);
       text-decoration: none;
     }
-    .nav-brand:hover { text-decoration: none; color: #333; }
+    .nav-brand:hover { text-decoration: none; color: var(--text); }
     nav ul {
       list-style: none;
       display: flex;
+      align-items: center;
       gap: 24px;
     }
     nav ul a {
       font-size: 0.9rem;
       font-weight: 600;
-      color: #555;
+      color: var(--subtext);
       text-decoration: none;
     }
-    nav ul a:hover { color: #007bff; text-decoration: none; }
+    nav ul a:hover { color: var(--link); text-decoration: none; }
+
+    /* ── Dark mode toggle ── */
+    #theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--subtext);
+      padding: 2px 4px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+    #theme-toggle:hover { color: var(--link); }
+    .dark-icon { display: none; }
+    html.dark .light-icon { display: none; }
+    html.dark .dark-icon { display: inline; }
 
     /* ── Hero ── */
     .hero { margin-bottom: 48px; }
@@ -69,7 +121,7 @@
       font-weight: 700;
       line-height: 1.3;
       margin-bottom: 16px;
-      color: #333;
+      color: var(--text);
     }
     .hero p {
       margin-bottom: 12px;
@@ -86,7 +138,7 @@
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 12px;
-      color: #333;
+      color: var(--text);
     }
 
     /* ── Post / Paper list ── */
@@ -94,36 +146,36 @@
     .post-list li {
       padding: 7px 0;
       font-size: 0.975rem;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid var(--border-list);
     }
-    .post-list li:first-child { border-top: 1px solid #f0f0f0; }
+    .post-list li:first-child { border-top: 1px solid var(--border-list); }
     .post-list code {
       font-family: 'SFMono-Regular', Consolas, monospace;
       font-size: 0.8rem;
-      background: #f5f5f5;
+      background: var(--code-bg);
       padding: 2px 5px;
       border-radius: 3px;
-      color: #555;
+      color: var(--code-text);
       margin-right: 4px;
     }
-    .post-list a { color: #333; font-weight: 600; }
-    .post-list a:hover { color: #007bff; text-decoration: none; }
+    .post-list a { color: var(--text); font-weight: 600; }
+    .post-list a:hover { color: var(--link); text-decoration: none; }
 
     .more { font-size: 0.9rem; margin-top: 12px; display: inline-block; }
 
     /* ── Footer ── */
     footer {
-      border-top: 1px solid #eee;
+      border-top: 1px solid var(--border);
       padding: 24px 0 40px;
       font-size: 0.85rem;
-      color: #999;
+      color: var(--muted);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
     }
-    footer a { color: #999; }
-    footer a:hover { color: #007bff; text-decoration: none; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--link); text-decoration: none; }
 
     @media (max-width: 520px) {
       nav ul { gap: 14px; }
@@ -141,6 +193,12 @@
         <li><a href="/writing/">Writing</a></li>
         <li><a href="https://latentvaluelab.com" target="_blank" rel="noopener">Consulting</a></li>
         <li><a href="https://scholar.google.com/citations?user=vRvQj2IAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
+        <li>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="light-icon">☾</span>
+            <span class="dark-icon">☀</span>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -205,6 +263,14 @@
     </footer>
 
   </div>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      var html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
 
 </body>
 </html>
